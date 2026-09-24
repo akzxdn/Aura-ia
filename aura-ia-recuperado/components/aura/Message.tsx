@@ -1,0 +1,7 @@
+"use client";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import {Copy,Check,FileText} from "lucide-react";
+import {useState} from "react";
+import type {Message as MessageType} from "@/lib/aura-types";
+export default function Message({message,streaming}:{message:MessageType;streaming?:boolean}){const [copied,setCopied]=useState(false);return <article className={`message message-${message.role}`}><div className="message-label">{message.role==="assistant"?<><span className="mini-aura"/>AURA</>:"VOCÊ"}</div><div className="message-content">{message.attachments?.map(f=><div className="message-file" key={f.id}><FileText size={14}/>{f.name}</div>)}{message.role==="assistant"?<div className="markdown"><ReactMarkdown remarkPlugins={[remarkGfm]} components={{a:({children,...props})=><a {...props} target="_blank" rel="noopener noreferrer">{children}</a>}}>{message.content}</ReactMarkdown>{!message.content&&<span className="thinking-dots">Pensando<span>...</span></span>}{streaming&&message.content&&<span className="stream-cursor"/>}</div>:<p className="user-text">{message.content}</p>}{message.role==="assistant"&&message.content&&!streaming&&<button className="copy-button" onClick={async()=>{try{await navigator.clipboard.writeText(message.content);setCopied(true);setTimeout(()=>setCopied(false),1800)}catch{setCopied(false)}}} aria-label={copied?"Resposta copiada":"Copiar resposta"}>{copied?<Check size={14}/>:<Copy size={14}/>}<span>{copied?"Copiado":"Copiar"}</span></button>}</div></article>}

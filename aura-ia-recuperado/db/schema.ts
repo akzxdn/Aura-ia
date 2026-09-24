@@ -1,0 +1,3 @@
+import {sqliteTable,text,integer,index} from "drizzle-orm/sqlite-core";
+export const conversations=sqliteTable("conversations",{id:text("id").primaryKey(),owner:text("owner").notNull(),title:text("title").notNull(),messages:text("messages").notNull().default("[]"),updated:integer("updated").notNull()},t=>[index("idx_conversations_owner_updated").on(t.owner,t.updated)]);
+export const files=sqliteTable("files",{id:text("id").primaryKey(),owner:text("owner").notNull(),name:text("name").notNull(),type:text("type").notNull(),size:integer("size").notNull(),created:integer("created").notNull()},t=>[index("idx_files_owner").on(t.owner)]);
