@@ -1,4 +1,50 @@
 "use client";
-import {Mic,X} from "lucide-react";
+import { Mic } from "lucide-react";
 import AuraCore from "./AuraCore";
-export default function VoiceMode({onClose}:{onClose:()=>void;onSend:(text:string)=>Promise<string>;onCancel:()=>void;mode:"demo"|"live"}){return <div className="voice-screen" role="dialog" aria-modal="true"><div className="voice-header"><span className="wordmark">AURA VOZ</span><button className="icon-button" onClick={onClose}><X/></button></div><div className="voice-main"><AuraCore state="IDLE"/><h2>Estou aqui com você.</h2><button className="voice-record"><Mic/></button><p>O modo de voz depende da configuração da API.</p></div></div>}
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+export default function VoiceMode({
+  onClose,
+}: {
+  onClose: () => void;
+  onSend: (text: string) => Promise<string>;
+  onCancel: () => void;
+  mode: "demo" | "live" | "unconfigured";
+}) {
+  return (
+    <Dialog
+      open
+      onOpenChange={(open) => {
+        if (!open) onClose();
+      }}
+    >
+      <DialogContent>
+        <div className="voice-main">
+          <p className="eyebrow">AURA / VOZ</p>
+          <AuraCore state="IDLE" />
+          <DialogTitle>Um espaço para sua voz.</DialogTitle>
+          <DialogDescription>
+            A conversa por voz ainda não está disponível nesta versão. Por
+            enquanto, continue pelo campo de mensagem.
+          </DialogDescription>
+          <button
+            className="voice-record"
+            disabled
+            aria-label="Microfone indisponível"
+          >
+            <Mic />
+          </button>
+          <div>
+            <button className="text-button" onClick={onClose}>
+              Voltar à conversa
+            </button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}

@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "Composição em notebook 1440 × 768 sem sobreposição",
+    "Animação ambiente ativa",
+    "Preferência do sistema mantém núcleo estático",
+    "Preferência local pausa efetivamente o canvas",
+    "Cancelar geração libera o compositor",
+    "Copiar resposta escreve o texto no clipboard",
+    "Histórico reabre conversa após reload",
+    "Fechar diálogo mobile devolve foco ao menu"
+  ],
+  "errors": []
+}

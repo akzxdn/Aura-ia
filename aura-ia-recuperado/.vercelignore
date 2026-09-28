@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+.audit
+.env*
+docs
+tests
+*.log
+*.tsbuildinfo

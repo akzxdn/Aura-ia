@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "Respostas obrigatórias, validação, revisão e bloqueio do scroll: 1440",
+    "Núcleo se expande durante a transição real",
+    "Funcionalidades após conclusão, sem enviar respostas automaticamente: 1440",
+    "Respostas e funcionalidade chegam ao rascunho editável: 1440",
+    "Rascunho envia e recebe streaming pelo endpoint existente",
+    "Respostas obrigatórias, validação, revisão e bloqueio do scroll: 768",
+    "Funcionalidades após conclusão, sem enviar respostas automaticamente: 768",
+    "Respostas e funcionalidade chegam ao rascunho editável: 768",
+    "Respostas obrigatórias, validação, revisão e bloqueio do scroll: 360",
+    "Funcionalidades após conclusão, sem enviar respostas automaticamente: 360",
+    "Respostas e funcionalidade chegam ao rascunho editável: 360",
+    "Sem erros de console/JavaScript"
+  ],
+  "errors": []
+}

@@ -1,0 +1,16 @@
+{
+  "checks": [
+    "Scroll: cinco capítulos e largura 1440",
+    "Menu, configurações, foco, explorar e voz: 1440",
+    "Scroll: cinco capítulos e largura 768",
+    "Menu, configurações, foco, explorar e voz: 768",
+    "Scroll: cinco capítulos e largura 360",
+    "Menu, configurações, foco, explorar e voz: 360",
+    "Envio → API real local → streaming → Markdown",
+    "Cancelar e confirmar exclusão da conversa de teste",
+    "Anexar e remover arquivo pelo endpoint existente",
+    "Texto longo, listas, tabela e código rolável nas três larguras",
+    "Sem erros JavaScript ou console em sessão limpa"
+  ],
+  "errors": []
+}
